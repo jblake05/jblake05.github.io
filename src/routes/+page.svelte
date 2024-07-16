@@ -65,7 +65,7 @@
 
     <a href="/programming">
         <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">
-			programming
+			test
 		</text>
     </a>
 
