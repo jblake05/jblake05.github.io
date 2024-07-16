@@ -7,10 +7,16 @@
 	$: innerHeight = 0
 
 	$: musicPoints = `0,0 0,${innerHeight} ${innerWidth/2},${innerHeight}`
-	$: musicStyle = "fill:purple;"
+	$: musicStyle = "fill:#b544dd;"
 	const musicRoute = () => {
 		goto('/music');
 	}
+
+    $: aboutPoints = `${innerWidth},0 ${innerWidth},${innerHeight} ${innerWidth/2},${innerHeight}`
+    $: aboutStyle = "fill:yellow;"
+    const aboutRoute = () => {
+        goto('/about');
+    }
 	// export let musicPoints = `0,0 0,${innerHeight} ${innerWidth/3},${innerHeight}`
 	// ^ undefined currently........ and not bound to changes later in the code.....
 	// export let musicPoints = `0,0 0,100 100,100`
@@ -22,22 +28,14 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<svg width={innerWidth/2} height={innerHeight}>
-	<!-- <nav> -->
-
-		<!-- <a href="/">home</a> -->
-		<!-- <a href="/music">music</a> -->
-		<!-- <a href="/programming">programming</a> -->
-		<!-- <a href="/about">about</a> -->
-	<!-- </nav> -->
-
+<svg width={innerWidth} height={innerHeight}>
 	<polygon points={musicPoints} 
 	on:click={musicRoute} 
 	on:mouseenter={() => {
-		musicStyle = "fill:blue;"
+		musicStyle = "fill:#9d08d3;"
 	}} 
 	on:mouseleave={() => {
-		musicStyle="fill:purple;"
+		musicStyle="fill:#b544dd;"
 	}}
 	style={musicStyle}
 	/>
@@ -47,9 +45,32 @@
 			music
 		</text>
 	</a>
+
+    <polygon points={aboutPoints}
+    on:click={aboutRoute}
+    on:mouseenter={() => {
+        aboutStyle = "fill:orange;"
+    }}
+    on:mouseleave={() => {
+        aboutStyle="fill:yellow;"
+    }}
+    style={aboutStyle}
+    />
+
+    <a href="/about">
+		<text x="87.5%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">
+			about
+		</text>
+	</a>
+
 </svg>
 
-<slot></slot>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- <svg x="50%" width={innerWidth} height={innerHeight} style="z-index:-95">
+
+
+</svg> -->
 
 <style>
 	svg {
