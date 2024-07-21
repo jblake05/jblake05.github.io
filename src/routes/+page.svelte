@@ -106,6 +106,8 @@
 			about
 		</text>
 	</a>
+
+	<!-- <polyline points={progPoints}></polyline> -->
 </svg>
 
 <style src="../styles/home.css"></style>

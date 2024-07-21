@@ -1,8 +1,15 @@
 polygon {
     stroke: black;
-    stroke-width: 3px;
+    stroke-width: 10px;
     stroke-opacity: 20%;
 }
+
+/* polyline { 
+    fill: none;
+    stroke: black;
+    stroke-width: 10px;
+    stroke-opacity: 25%;
+} */
 
 text {
     /* font-family: 'Courier New', Courier, monospace; */
@@ -11,14 +18,6 @@ text {
     font-size: 25px;
 }
 
-a {
-    color: black;
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    top: 250px;
-    left: 100px;
-}
 /* nav {
     border-width:1px 0;
     list-style:none;
