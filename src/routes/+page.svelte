@@ -7,16 +7,22 @@
 	$: innerHeight = 0
 
 	$: musicPoints = `0,0 0,${innerHeight} ${innerWidth/2},${innerHeight}`
-	$: musicStyle = "fill:#b544dd;"
+	$: musicStyle = "fill:#dd2e45;"
 	const musicRoute = () => {
 		goto('/music');
 	}
 
     $: aboutPoints = `${innerWidth},0 ${innerWidth},${innerHeight} ${innerWidth/2},${innerHeight}`
-    $: aboutStyle = "fill:yellow;"
+    $: aboutStyle = "fill:#fcee58;"
     const aboutRoute = () => {
         goto('/about');
     }
+
+	$: progPoints = `0,0 ${innerWidth/2},${innerHeight} ${innerWidth},0`
+	$: progStyle = "fill:#fc94fa;"
+	const progRoute = () => {
+		goto('/programming');
+	}
 	// export let musicPoints = `0,0 0,${innerHeight} ${innerWidth/3},${innerHeight}`
 	// ^ undefined currently........ and not bound to changes later in the code.....
 	// export let musicPoints = `0,0 0,100 100,100`
@@ -29,61 +35,86 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <svg width={innerWidth} height={innerHeight}>
+
+	<!-- MUSIC -->
 	<polygon points={musicPoints} 
 	on:click={musicRoute} 
 	on:mouseenter={() => {
-		musicStyle = "fill:#9d08d3;"
+		// musicStyle = "fill:#9d08d3;"
+		musicStyle="fill:#8458fc;"
+
 	}} 
 	on:mouseleave={() => {
-		musicStyle="fill:#b544dd;"
+		musicStyle="fill:#dd2e45;"
 	}}
 	style={musicStyle}
 	/>
 
-	<a href="/music">
+	<a href="/music"
+	on:mouseenter={() => {
+		musicStyle = "fill:#8458fc;"
+	}}>
 		<text x="12.5%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">
 			music
 		</text>
 	</a>
 
+	<!-- ABOUT -->
     <polygon points={aboutPoints}
     on:click={aboutRoute}
     on:mouseenter={() => {
-        aboutStyle = "fill:orange;"
+        aboutStyle = "fill:#fc9c58;"
     }}
     on:mouseleave={() => {
-        aboutStyle="fill:yellow;"
+        aboutStyle="fill:#fcee58;"
     }}
     style={aboutStyle}
     />
 
-    <a href="/about">
+    <a href="/about"
+	on:mouseenter={() => {
+		 aboutStyle = "fill:#fc9c58;"
+	}}>
 		<text x="87.5%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">
 			about
 		</text>
 	</a>
 
-    <a href="/programming">
+
+	<!-- PROGRAMMING -->
+	<polygon points={progPoints}
+	on:click={progRoute}
+	on:mouseenter={() => {
+		progStyle = "fill:#84f48b;"
+	}}
+	on:mouseleave={() => {
+		progStyle = "fill:#fc94fa;"
+	}}
+	style={progStyle}
+	/>
+
+    <a href="/programming"
+	on:mouseenter={() => {
+		progStyle = "fill:#84f48b;"
+	}}>
         <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">
-			test
+			programming
 		</text>
     </a>
 
 </svg>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<!-- <svg x="50%" width={innerWidth} height={innerHeight} style="z-index:-95">
-
-
-</svg> -->
-
 <style>
-	svg {
-		z-index:-100;
-	}
+	polygon {
+		stroke: black;
+		stroke-width: 3px;
+		stroke-opacity: 20%;
+	}	
 
 	text {
+		/* font-family: 'Courier New', Courier, monospace; */
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-weight: 350;
 		font-size: 25px;
 	}
 
