@@ -7,19 +7,19 @@
 	$: innerHeight = 0;
 
 	$: musicPoints = `0,0 0,${innerHeight} ${innerWidth / 2},${innerHeight}`;
-	$: musicStyle = 'fill:#f2596d;';
+	$: musicStyle = 'fill:#f76f81;';
 	const musicRoute = () => {
 		goto('/music');
 	};
 
 	$: progPoints = `0,0 ${innerWidth / 2},${innerHeight} ${innerWidth},0`;
-	$: progStyle = 'fill:#f9a9ef;';
+	$: progStyle = 'fill:#fc92f7;';
 	const progRoute = () => {
 		goto('/programming');
 	};
 
 	$: aboutPoints = `${innerWidth},0 ${innerWidth},${innerHeight} ${innerWidth / 2},${innerHeight}`;
-	$: aboutStyle = 'fill:#fcee58;';
+	$: aboutStyle = 'fill:#fcf392;';
 	const aboutRoute = () => {
 		goto('/about');
 	};
@@ -40,10 +40,10 @@
 		on:click={musicRoute}
 		on:mouseenter={() => {
 			// musicStyle = "fill:#9d08d3;"
-			musicStyle = 'fill:#9875f9;';
+			musicStyle = 'fill:#ac90f9;';
 		}}
 		on:mouseleave={() => {
-			musicStyle = 'fill:#f2596d;';
+			musicStyle = 'fill:#f76f81;';
 		}}
 		style={musicStyle}
 	/>
@@ -51,7 +51,7 @@
 	<a
 		href="/music"
 		on:mouseenter={() => {
-			musicStyle = 'fill:#9875f9;';
+			musicStyle = 'fill:#ac90f9;';
 		}}
 	>
 		<text x="12.5%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">
@@ -64,10 +64,10 @@
 		points={progPoints}
 		on:click={progRoute}
 		on:mouseenter={() => {
-			progStyle = 'fill:#8dfc94;';
+			progStyle = 'fill:#92fcb7;';
 		}}
 		on:mouseleave={() => {
-			progStyle = 'fill:#f9a9ef;';
+			progStyle = 'fill:#fc92f7;';
 		}}
 		style={progStyle}
 	/>
@@ -75,7 +75,7 @@
 	<a
 		href="/programming"
 		on:mouseenter={() => {
-			progStyle = 'fill:#8dfc94;';
+			progStyle = 'fill:#92fcb7;';
 		}}
 	>
 		<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">
@@ -88,10 +88,10 @@
 		points={aboutPoints}
 		on:click={aboutRoute}
 		on:mouseenter={() => {
-			aboutStyle = 'fill:#fc9c58;';
+			aboutStyle = 'fill:#fcba8a;';
 		}}
 		on:mouseleave={() => {
-			aboutStyle = 'fill:#fcee58;';
+			aboutStyle = 'fill:#fcf392;';
 		}}
 		style={aboutStyle}
 	/>
@@ -99,7 +99,7 @@
 	<a
 		href="/about"
 		on:mouseenter={() => {
-			aboutStyle = 'fill:#fc9c58;';
+			aboutStyle = 'fill:#fcba8a;';
 		}}
 	>
 		<text x="87.5%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">
