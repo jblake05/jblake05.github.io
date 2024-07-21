@@ -7,7 +7,7 @@
 	$: innerHeight = 0
 
 	$: musicPoints = `0,0 0,${innerHeight} ${innerWidth/2},${innerHeight}`
-	$: musicStyle = "fill:#dd2e45;"
+	$: musicStyle = "fill:#f2596d;"
 	const musicRoute = () => {
 		goto('/music');
 	}
@@ -19,7 +19,7 @@
     }
 
 	$: progPoints = `0,0 ${innerWidth/2},${innerHeight} ${innerWidth},0`
-	$: progStyle = "fill:#fc94fa;"
+	$: progStyle = "fill:#fc7efa;"
 	const progRoute = () => {
 		goto('/programming');
 	}
@@ -41,18 +41,18 @@
 	on:click={musicRoute} 
 	on:mouseenter={() => {
 		// musicStyle = "fill:#9d08d3;"
-		musicStyle="fill:#8458fc;"
+		musicStyle="fill:#9875f9;"
 
 	}} 
 	on:mouseleave={() => {
-		musicStyle="fill:#dd2e45;"
+		musicStyle="fill:#f2596d;"
 	}}
 	style={musicStyle}
 	/>
 
 	<a href="/music"
 	on:mouseenter={() => {
-		musicStyle = "fill:#8458fc;"
+		musicStyle = "fill:#9875f9;"
 	}}>
 		<text x="12.5%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">
 			music
@@ -85,17 +85,17 @@
 	<polygon points={progPoints}
 	on:click={progRoute}
 	on:mouseenter={() => {
-		progStyle = "fill:#84f48b;"
+		progStyle = "fill:#79e080;"
 	}}
 	on:mouseleave={() => {
-		progStyle = "fill:#fc94fa;"
+		progStyle = "fill:#fc7efa;"
 	}}
 	style={progStyle}
 	/>
 
     <a href="/programming"
 	on:mouseenter={() => {
-		progStyle = "fill:#84f48b;"
+		progStyle = "fill:#79e080;"
 	}}>
         <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">
 			programming
