@@ -19,7 +19,7 @@
 	};
 
 	$: aboutPoints = `${innerWidth},0 ${innerWidth},${innerHeight} ${innerWidth / 2},${innerHeight}`;
-	$: aboutStyle = 'fill:#fcf392;';
+	$: aboutStyle = 'fill:#fcba8a;';
 	const aboutRoute = () => {
 		goto('/about');
 	};
@@ -88,10 +88,10 @@
 		points={aboutPoints}
 		on:click={aboutRoute}
 		on:mouseenter={() => {
-			aboutStyle = 'fill:#fcba8a;';
+			aboutStyle = 'fill:#fcf392;';
 		}}
 		on:mouseleave={() => {
-			aboutStyle = 'fill:#fcf392;';
+			aboutStyle = 'fill:#fcba8a;';
 		}}
 		style={aboutStyle}
 	/>
@@ -99,7 +99,7 @@
 	<a
 		href="/about"
 		on:mouseenter={() => {
-			aboutStyle = 'fill:#fcba8a;';
+			aboutStyle = 'fill:#fcf392;';
 		}}
 	>
 		<text x="87.5%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">
