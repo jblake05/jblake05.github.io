@@ -110,4 +110,18 @@
 	<!-- <polyline points={progPoints}></polyline> -->
 </svg>
 
-<style src="../styles/home.css"></style>
+<!-- <style src="../styles/home.css"></style> -->
+<style>
+	polygon {
+		stroke: black;
+		stroke-width: 10px;
+		stroke-opacity: 20%;
+	}
+
+	text {
+		/* font-family: 'Courier New', Courier, monospace; */
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-weight: 350;
+		font-size: 25px;
+	}
+</style>
