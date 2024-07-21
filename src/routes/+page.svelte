@@ -12,16 +12,16 @@
 		goto('/music');
 	};
 
+	$: progPoints = `0,0 ${innerWidth / 2},${innerHeight} ${innerWidth},0`;
+	$: progStyle = 'fill:#f9a9ef;';
+	const progRoute = () => {
+		goto('/programming');
+	};
+
 	$: aboutPoints = `${innerWidth},0 ${innerWidth},${innerHeight} ${innerWidth / 2},${innerHeight}`;
 	$: aboutStyle = 'fill:#fcee58;';
 	const aboutRoute = () => {
 		goto('/about');
-	};
-
-	$: progPoints = `0,0 ${innerWidth / 2},${innerHeight} ${innerWidth},0`;
-	$: progStyle = 'fill:#fc7efa;';
-	const progRoute = () => {
-		goto('/programming');
 	};
 	// export let musicPoints = `0,0 0,${innerHeight} ${innerWidth/3},${innerHeight}`
 	// ^ undefined currently........ and not bound to changes later in the code.....
@@ -64,10 +64,10 @@
 		points={progPoints}
 		on:click={progRoute}
 		on:mouseenter={() => {
-			progStyle = 'fill:#79e080;';
+			progStyle = 'fill:#8dfc94;';
 		}}
 		on:mouseleave={() => {
-			progStyle = 'fill:#fc7efa;';
+			progStyle = 'fill:#f9a9ef;';
 		}}
 		style={progStyle}
 	/>
@@ -75,7 +75,7 @@
 	<a
 		href="/programming"
 		on:mouseenter={() => {
-			progStyle = 'fill:#79e080;';
+			progStyle = 'fill:#8dfc94;';
 		}}
 	>
 		<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="black">
