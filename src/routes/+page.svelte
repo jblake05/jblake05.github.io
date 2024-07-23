@@ -23,13 +23,9 @@
 	const aboutRoute = () => {
 		goto('/about');
 	};
-	// export let musicPoints = `0,0 0,${innerHeight} ${innerWidth/3},${innerHeight}`
-	// ^ undefined currently........ and not bound to changes later in the code.....
-	// export let musicPoints = `0,0 0,100 100,100`
 </script>
 
 <svelte:window bind:innerWidth bind:outerWidth bind:innerHeight bind:outerHeight />
-<!-- <div bind:this={musicPoints}/> -->
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
