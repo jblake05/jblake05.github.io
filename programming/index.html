@@ -68,12 +68,8 @@
         const BACKGROUND = "#ff8c8c";
         const FOREGROUND = "#8c5023";
         const STROKE_WIDTH = 8;
-        // console.log(WIDTH, HEIGHT);
         const RADIUS = Math.min(WIDTH, HEIGHT); // Math.min(WIDTH, HEIGHT)/6;
-        // canvas.width = RADIUS;
-        // canvas.height = RADIUS;
-        const Y_OFFSET = 10;
-        // console.log(RADIUS);
+
 
 
         function clear() {
@@ -92,43 +88,19 @@
         function frame() {
             clear();
 
-            // ctx.shadowCcolor = "black";
-            // ctx.shadowOffsetX = 10;
-            // ctx.shadowOffsetY = 10;
-
-            // ctx.fillRect(Math.random()*10, Math.random()*10, 15, 15);
             const scale = i/totalSteps;
 
             ctx.beginPath();
 
-            
-            // ctx.moveTo(WIDTH/2 - (scale*WIDTH/4), HEIGHT/2 + (scale*HEIGHT/4));
-            // ctx.lineTo(WIDTH/2 + (scale*WIDTH/4), HEIGHT/2 + (scale*HEIGHT/4));
-            // ctx.lineTo(WIDTH/2, HEIGHT/2 - (scale*HEIGHT/4));
-            // ctx.lineTo(WIDTH/2 - (scale*WIDTH/4), HEIGHT/2 + (scale*HEIGHT/4));
+            ctx.moveTo(WIDTH/2 - (scale*WIDTH/4), -STROKE_WIDTH + HEIGHT/2 + (scale*HEIGHT/2));
+            ctx.lineTo(WIDTH/2 + (scale*WIDTH/4), -STROKE_WIDTH + HEIGHT/2 + (scale*HEIGHT/2));
+            ctx.lineTo(WIDTH/2 + (scale*WIDTH/4), STROKE_WIDTH + HEIGHT/2 - (scale*HEIGHT/2));
+            ctx.lineTo(WIDTH/2 - (scale*WIDTH/4), STROKE_WIDTH + HEIGHT/2 - (scale*HEIGHT/2));
+            ctx.lineTo(WIDTH/2 - (scale*WIDTH/4), -STROKE_WIDTH + HEIGHT/2 + (scale*HEIGHT/2));
 
-            // looks nice, arrow
-            // ctx.moveTo(WIDTH/2 - (scale*WIDTH), HEIGHT/2 + (scale*HEIGHT));
-            // ctx.lineTo(WIDTH/2 + (scale*WIDTH), HEIGHT/2 + (scale*HEIGHT));
-            // ctx.lineTo(WIDTH/2, HEIGHT/2 - (scale*HEIGHT));
-            // ctx.lineTo(WIDTH/2 - (scale*WIDTH), HEIGHT/2 + (scale*HEIGHT));
-            // ctx.stroke();
-
-            ctx.moveTo(WIDTH/2 - (scale*WIDTH/2), HEIGHT/2 + (scale*HEIGHT/2));
-            ctx.lineTo(WIDTH/2 + (scale*WIDTH/2), HEIGHT/2 + (scale*HEIGHT/2));
-            ctx.lineTo(WIDTH/2 + (scale*WIDTH/2), HEIGHT/2 - (scale*HEIGHT/2));
-            ctx.lineTo(WIDTH/2 - (scale*WIDTH/2), HEIGHT/2 - (scale*HEIGHT/2));
-            ctx.lineTo(WIDTH/2 - (scale*WIDTH/2), HEIGHT/2 + (scale*HEIGHT/2));
-            
             ctx.stroke();
 
             i = (i+1)%totalSteps;
-            // console.log(i);
-
-            // ctx.beginPath();
-            // ctx.arc(WIDTH - RADIUS/2, HEIGHT/2, 2+i++%(RADIUS/2 - STROKE_WIDTH), 0, 2*Math.PI);
-            // ctx.arc(WIDTH - RADIUS/2 - STROKE_WIDTH, STROKE_WIDTH + RADIUS/2, i++%(RADIUS/2), 0, 2*Math.PI);
-            // ctx.stroke();
 
             setTimeout(frame, 1000/FPS);
         }
