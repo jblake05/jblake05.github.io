@@ -81,9 +81,14 @@
             ctx.beginPath();
 
             ctx.moveTo(WIDTH/2 - (scale*WIDTH/2) + STROKE_WIDTH, HEIGHT/2 + (scale*HEIGHT/2));
-            ctx.lineTo(WIDTH/2 + (scale*WIDTH/2) - STROKE_WIDTH, HEIGHT/2 + (scale*HEIGHT/2));
-            ctx.lineTo(WIDTH/2 + WIDTH/2 - STROKE_WIDTH, STROKE_WIDTH + HEIGHT/2 - (scale*HEIGHT/2));
+            ctx.lineTo(WIDTH/2 + (scale*WIDTH/2) - STROKE_WIDTH, HEIGHT/2 - (scale*HEIGHT/2));
+            ctx.lineTo(WIDTH/2 + WIDTH/2 - STROKE_WIDTH, -STROKE_WIDTH + HEIGHT/2 + (scale*HEIGHT/2));
             ctx.lineTo(WIDTH/2 - (scale*WIDTH/2) + STROKE_WIDTH, HEIGHT/2 + (scale*HEIGHT/2));
+
+            // ctx.moveTo(WIDTH/2 - (scale*WIDTH/2) + STROKE_WIDTH, HEIGHT/2 + (scale*HEIGHT/2));
+            // ctx.lineTo(WIDTH/2 + (scale*WIDTH/2) - STROKE_WIDTH, HEIGHT/2 + (scale*HEIGHT/2));
+            // ctx.lineTo(WIDTH/2 + WIDTH/2 - STROKE_WIDTH, STROKE_WIDTH + HEIGHT/2 - (scale*HEIGHT/2));
+            // ctx.lineTo(WIDTH/2 - (scale*WIDTH/2) + STROKE_WIDTH, HEIGHT/2 + (scale*HEIGHT/2));
             ctx.stroke();
 
             i = (i+1)%totalSteps;
