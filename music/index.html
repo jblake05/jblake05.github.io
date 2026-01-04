@@ -35,6 +35,7 @@
     }
 
     .cover-grid {
+        padding-top: 2.5%;
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -58,6 +59,14 @@
         transition: all ease 0.8s;
     }
 
+    a {
+        color: #c9feff;
+    }
+
+    .p-text:hover {
+        filter: brightness(100%); /* turn off brightness transition on hover for this text */
+    }
+
 </style>
 
 <body>
@@ -75,14 +84,16 @@
 
     <div class="cover-grid">
         <div class="cover-entry">
-            <a href="./feel/">
+            <a href="https://artists.landr.com/055905477112">
                 <img src="../public/images/album-art/cover_swan_sq.jpg">
+                <p class="p-text">feel [single]</p>
             </a>
         </div>
 
         <div class="cover-entry">
-            <a href="./archives/">
+            <a href="https://artists.landr.com/055905477211">
                 <img src="../public/images/album-art/cover_guy_sq.jpg">
+                <p class="p-text">archives (2021-2024) [EP]</p>
             </a>
         </div>
     </div>
