@@ -1,3 +1,138 @@
+<style>
+    body {
+        background-color:  #ffb0e4;
+    }
+
+    h1 {
+        color: #8c5023;
+        width: 33%;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 2.5em;
+        text-shadow: -1px -1px black;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .about-container { 
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .top-flex { 
+        margin-top: 2em;
+        display: flex;
+        justify-content: flex-end;
+        /* height: */
+    }
+
+    .canvas-container {
+        width: 66%;
+        font-size: 50px;
+        height: 1em;
+    }
+
+    #about-canvas {
+        width: 2em;
+        float: right;
+
+    }
+
+    hr {
+        color: #8c5023;
+        background-color:  #8c5023;
+        font-size: 2rem;
+        height: 2px;
+    }
+
+</style>
+
 <body>
-    music
+    <div class="about-container">
+        <div class="top-flex">
+            <h1>music</h1>
+
+            <div class="canvas-container">
+                <canvas id="about-canvas">
+
+                </canvas>
+            </div>
+        </div>
+    <hr>
+
+    <script>
+        const canvas = document.getElementById("about-canvas");
+        const ctx = canvas.getContext("2d");
+
+        const WIDTH = canvas.width;
+        const HEIGHT = canvas.height;
+        const BACKGROUND = "#ff8c8c";
+        const FOREGROUND = "#8c5023";
+        const STROKE_WIDTH = 8;
+        // console.log(WIDTH, HEIGHT);
+        const RADIUS = Math.min(WIDTH, HEIGHT); // Math.min(WIDTH, HEIGHT)/6;
+        // canvas.width = RADIUS;
+        // canvas.height = RADIUS;
+        const Y_OFFSET = 10;
+        // console.log(RADIUS);
+
+
+        function clear() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        const FPS = 100;
+
+        ctx.fillStyle = FOREGROUND;
+        ctx.strokeStyle = FOREGROUND;
+        ctx.lineWidth = STROKE_WIDTH;
+        
+        let i = 0;
+        const totalSteps = 100;
+
+        function frame() {
+            clear();
+
+            // ctx.shadowCcolor = "black";
+            // ctx.shadowOffsetX = 10;
+            // ctx.shadowOffsetY = 10;
+
+            // ctx.fillRect(Math.random()*10, Math.random()*10, 15, 15);
+            const scale = i/totalSteps;
+
+            ctx.beginPath();
+
+            
+            // ctx.moveTo(WIDTH/2 - (scale*WIDTH/4), HEIGHT/2 + (scale*HEIGHT/4));
+            // ctx.lineTo(WIDTH/2 + (scale*WIDTH/4), HEIGHT/2 + (scale*HEIGHT/4));
+            // ctx.lineTo(WIDTH/2, HEIGHT/2 - (scale*HEIGHT/4));
+            // ctx.lineTo(WIDTH/2 - (scale*WIDTH/4), HEIGHT/2 + (scale*HEIGHT/4));
+
+            // looks nice, arrow
+            // ctx.moveTo(WIDTH/2 - (scale*WIDTH), HEIGHT/2 + (scale*HEIGHT));
+            // ctx.lineTo(WIDTH/2 + (scale*WIDTH), HEIGHT/2 + (scale*HEIGHT));
+            // ctx.lineTo(WIDTH/2, HEIGHT/2 - (scale*HEIGHT));
+            // ctx.lineTo(WIDTH/2 - (scale*WIDTH), HEIGHT/2 + (scale*HEIGHT));
+            // ctx.stroke();
+
+            ctx.moveTo(WIDTH/2 - (scale*WIDTH/2) + STROKE_WIDTH, HEIGHT/2 + (scale*HEIGHT/2));
+            ctx.lineTo(WIDTH/2 + (scale*WIDTH/2) - STROKE_WIDTH, HEIGHT/2 + (scale*HEIGHT/2));
+            ctx.lineTo(WIDTH/2 + WIDTH/2 - STROKE_WIDTH, STROKE_WIDTH + HEIGHT/2 - (scale*HEIGHT/2));
+            ctx.lineTo(WIDTH/2 - (scale*WIDTH/2) + STROKE_WIDTH, HEIGHT/2 + (scale*HEIGHT/2));
+            ctx.stroke();
+
+            i = (i+1)%totalSteps;
+            // console.log(i);
+
+            // ctx.beginPath();
+            // ctx.arc(WIDTH - RADIUS/2, HEIGHT/2, 2+i++%(RADIUS/2 - STROKE_WIDTH), 0, 2*Math.PI);
+            // ctx.arc(WIDTH - RADIUS/2 - STROKE_WIDTH, STROKE_WIDTH + RADIUS/2, i++%(RADIUS/2), 0, 2*Math.PI);
+            // ctx.stroke();
+
+            setTimeout(frame, 1000/FPS);
+        }
+        setTimeout(frame, 1000/FPS);
+    </script>
+
+    </div>
+    <!-- about -->
 </body>
