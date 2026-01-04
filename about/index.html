@@ -59,6 +59,8 @@
         </div>
     <hr>
 
+    <p class="inner-text">Test text</p>
+
     <script>
         const canvas = document.getElementById("about-canvas");
         const ctx = canvas.getContext("2d");
@@ -68,13 +70,8 @@
         const BACKGROUND = "#ff8c8c";
         const FOREGROUND = "#8c5023";
         const STROKE_WIDTH = 8;
-        // console.log(WIDTH, HEIGHT);
-        const RADIUS = Math.min(WIDTH, HEIGHT); // Math.min(WIDTH, HEIGHT)/6;
-        // canvas.width = RADIUS;
-        // canvas.height = RADIUS;
+        const RADIUS = Math.min(WIDTH, HEIGHT);
         const Y_OFFSET = 10;
-        // console.log(RADIUS);
-
 
         function clear() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -91,14 +88,8 @@
         function frame() {
             clear();
 
-            // ctx.shadowCcolor = "black";
-            // ctx.shadowOffsetX = 10;
-            // ctx.shadowOffsetY = 10;
-
-            // ctx.fillRect(Math.random()*10, Math.random()*10, 15, 15);
             ctx.beginPath();
             ctx.arc(WIDTH - RADIUS/2, HEIGHT/2, 2+i++%(RADIUS/2 - STROKE_WIDTH), 0, 2*Math.PI);
-            // ctx.arc(WIDTH - RADIUS/2 - STROKE_WIDTH, STROKE_WIDTH + RADIUS/2, i++%(RADIUS/2), 0, 2*Math.PI);
             ctx.stroke();
 
             setTimeout(frame, 1000/FPS);
@@ -107,5 +98,4 @@
     </script>
 
     </div>
-    <!-- about -->
 </body>
