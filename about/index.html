@@ -45,6 +45,26 @@
         height: 2px;
     }
 
+    p {
+        color: #8c5023;
+    }
+
+    a {
+        color: #8c5023;
+    }
+
+    .icon-footer {
+        width: 40%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+    }
+
+    .section-container {
+        height: 80%;
+    }
+
 </style>
 
 <body>
@@ -65,7 +85,10 @@
         </div>
     <hr>
 
-    <p class="inner-text">Test text</p>
+    <p class="inner-text">I'm a programmer and electronic musician from the Boston area who now lives in Minneapolis. I love working on audio plugins, games, and music production/sound design.
+    <br><br>
+    You can find my resume <a href="../public/files/Jeff Blake -- Resume 2026.pdf" download>here</a> and can reach out to me <a href="mailto:JeffB5673@gmail.com">here</a> if you want to get in touch to work on something together!
+    </p>
 
     <script>
         const canvas = document.getElementById("about-canvas");
@@ -103,5 +126,10 @@
         setTimeout(frame, 1000/FPS);
     </script>
 
+    </div>
+
+    <div class="icon-footer">
+        <a href="https://www.github.com/jblake05"><img class="github-icon" src="../public/icons/github-mark.svg"></a>
+        <a href="https://www.soundcloud.com/umvug/"><img class="soundcloud-icon" src="../public/icons/soundcloud.png"></a>
     </div>
 </body>

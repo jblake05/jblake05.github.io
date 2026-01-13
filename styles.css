@@ -71,6 +71,40 @@ p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.soundcloud-icon {
+    max-width: 10em;
+    height: auto;
+
+    transform: scale(1.0);
+    /* filter: blur(0.05rem); */
+
+    transition: all ease 0.8s;
+}
+
+.github-icon {
+    max-width: 10em;
+    height: auto;
+
+    transform: scale(1.0);
+    /* filter: blur(0.05rem); */
+
+    transition: all ease 0.8s;
+}
+
+.soundcloud-icon:hover {
+    transform: scale(1.1);
+    /* filter: blur(0.025rem); */
+
+    transition: all ease 0.8s;
+}
+
+.github-icon:hover {
+    transform: scale(1.1);
+    /* filter: blur(0.025rem); */
+
+    transition: all ease 0.8s;
+}
+
 @media only screen and (max-width: 500px) {
 
 }
