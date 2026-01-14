@@ -55,14 +55,25 @@
 
     .icon-footer {
         width: 40%;
+        font-size: 1.25em;
         margin: 0 auto;
         display: flex;
         justify-content: space-evenly;
         align-items: flex-end;
     }
 
+    .icon-footer a {
+        transform: scale(1.0);
+        transition: all ease 0.8s;
+    }
+
+    .icon-footer a:hover {
+        transform: scale(1.1);
+        transition: all ease 0.8s;
+    }
+
     .section-container {
-        height: 80%;
+        height: 50%;
     }
 
 </style>
@@ -88,6 +99,8 @@
     <p class="inner-text">I'm a programmer and electronic musician from the Boston area who now lives in Minneapolis. 
         I love working on audio plugins, games, and music production/sound design. I'm really passionate about keeping programming accessible,
         free, and open source.
+    <br><br>
+    I like to program in C, but am most proficient in JavaScript, Java, and Python. For music, I primarily use Ableton.
     <br><br>
     You can find my resume <a href="../public/files/Jeff Blake -- Resume 2026.pdf" download>here</a> and can reach out to me <a href="mailto:JeffB5673@gmail.com">here</a> if you want to get in touch to work on something together!
     </p>
@@ -131,7 +144,7 @@
     </div>
 
     <div class="icon-footer">
-        <a href="https://www.github.com/jblake05"><img class="github-icon" src="../public/icons/github-mark.svg"></a>
-        <a href="https://www.soundcloud.com/umvug/"><img class="soundcloud-icon" src="../public/icons/soundcloud.png"></a>
+        <a href="https://www.github.com/jblake05">github</a>
+        <a href="https://www.soundcloud.com/umvug/">soundcloud</a>
     </div>
 </body>
