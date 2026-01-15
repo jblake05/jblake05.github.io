@@ -54,7 +54,6 @@
     }
 
     .icon-footer {
-        width: 40%;
         font-size: 1.25em;
         margin: 0 auto;
         display: flex;
@@ -72,8 +71,14 @@
         transition: all ease 0.8s;
     }
 
-    .section-container {
-        height: 50%;
+    @media only screen and (max-width: 500px) {
+
+    }
+
+    @media only screen and (min-width: 500px) {
+        .icon-footer {
+            width: 40%;
+        }
     }
 
 </style>

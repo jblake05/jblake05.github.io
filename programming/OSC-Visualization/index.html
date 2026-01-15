@@ -54,13 +54,18 @@
         #label {
             font-size: 2em;
         }
+
+        .demo-video video {
+            max-width: 100%;
+        }
     }
 
-    .demo-video video {
-        max-width: 50em;
-        
-        object-fit: cover;
+    @media only screen and (min-width: 500px) {
+        .demo-video video {
+            max-width: 50em;
+        }
     }
+
 
     .resource-container {
         width: 100%;
