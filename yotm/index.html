@@ -100,11 +100,13 @@
 
         #back-arrow {
             padding-right: 2%;
-            width: 15%;
+            width: 20%;
+            margin: auto 0;
         }
         
         #label {
             width: 100%;
+            font-size: 1.75em;
         }
     }
 
@@ -181,22 +183,45 @@
             ctx.beginPath();
 
             ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2 - (scale * WIDTH/2), HEIGHT/2 - (scale * HEIGHT/2));
+            ctx.lineTo(WIDTH/2, HEIGHT/2 - (scale * HEIGHT/2));
+
+            //top right
+            ctx.moveTo(WIDTH/2, HEIGHT/2);
+            ctx.lineTo(WIDTH/2 + (scale * 1*WIDTH/6), HEIGHT/2 - (scale * 2*HEIGHT/6));
 
             ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2 - (scale * WIDTH/2), HEIGHT/2);
-
-            ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2 - (scale * WIDTH/2), HEIGHT/2 + (scale * HEIGHT/2));
-    
-            ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2 + (scale * WIDTH/2), HEIGHT/2 + (scale * HEIGHT/2));
+            ctx.lineTo(WIDTH/2 + (scale * 2*WIDTH/6), HEIGHT/2 - (scale * 1*HEIGHT/6));
 
             ctx.moveTo(WIDTH/2, HEIGHT/2);
             ctx.lineTo(WIDTH/2 + (scale * WIDTH/2), HEIGHT/2);
 
+            // bottom right
             ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2 + (scale * WIDTH/2), HEIGHT/2 - (scale * HEIGHT/2));   
+            ctx.lineTo(WIDTH/2 + (scale * 2*WIDTH/6), HEIGHT/2 + (scale * HEIGHT/6));
+
+            ctx.moveTo(WIDTH/2, HEIGHT/2);
+            ctx.lineTo(WIDTH/2 + (scale * 1*WIDTH/6), HEIGHT/2 + (scale * 2*HEIGHT/6));
+
+            ctx.moveTo(WIDTH/2, HEIGHT/2);
+            ctx.lineTo(WIDTH/2, HEIGHT/2 + (scale * HEIGHT/2));
+
+
+            // bottom left
+            ctx.moveTo(WIDTH/2, HEIGHT/2);
+            ctx.lineTo(WIDTH/2 - (scale * WIDTH/6), HEIGHT/2 + (scale * 2*HEIGHT/6));
+
+            ctx.moveTo(WIDTH/2, HEIGHT/2);
+            ctx.lineTo(WIDTH/2 - (scale * 2*WIDTH/6), HEIGHT/2 + (scale * HEIGHT/6));
+
+            ctx.moveTo(WIDTH/2, HEIGHT/2);
+            ctx.lineTo(WIDTH/2 - (scale * WIDTH/2), HEIGHT/2);
+
+            // top left
+            ctx.moveTo(WIDTH/2, HEIGHT/2);
+            ctx.lineTo(WIDTH/2 - (scale * 2*WIDTH/6), HEIGHT/2 - (scale * HEIGHT/6));
+
+            ctx.moveTo(WIDTH/2, HEIGHT/2);
+            ctx.lineTo(WIDTH/2 - (scale * WIDTH/6), HEIGHT/2 - (scale * 2*HEIGHT/6));
             
             ctx.stroke();
 
