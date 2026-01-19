@@ -177,6 +177,12 @@
             ctx.lineTo(WIDTH/2 - (scale*WIDTH/4), STROKE_WIDTH + HEIGHT/2 - (scale*HEIGHT/2));
             ctx.lineTo(WIDTH/2 - (scale*WIDTH/4), -STROKE_WIDTH + HEIGHT/2 + (scale*HEIGHT/2));
 
+            ctx.moveTo(WIDTH/2, HEIGHT/2);
+            ctx.lineTo(WIDTH/2, HEIGHT/2 - (scale * HEIGHT/2 - STROKE_WIDTH));
+
+            ctx.moveTo(WIDTH/2, HEIGHT/2);
+            ctx.lineTo(WIDTH/2, HEIGHT/2 + (scale * HEIGHT/2 - STROKE_WIDTH));
+
             ctx.stroke();
 
             i = (i+1)%totalSteps;
