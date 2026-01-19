@@ -68,6 +68,13 @@
 
     a {
         color: #61ff8e;
+        transform: scale(1.0);
+        transition: all ease 0.8s;
+    }
+
+    a:hover {
+        transform: scale(1.1);
+        transition: all ease 0.8s;
     }
 
     @media only screen and (max-width: 500px) {
@@ -107,9 +114,7 @@
         </div>
 
         <div class="link-container">
-            <div class="download-link">
-                <a href="../../public/files/UseTime.vst3.zip" download>download</a>
-            </div>
+            <a href="../../public/files/UseTime.vst3.zip" download>download</a>
 
             <a href="https://www.github.com/jblake05/UseTime">github repo</a>
         </div>

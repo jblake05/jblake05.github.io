@@ -72,18 +72,14 @@
 
     a {
         color: #f99766;
-        transform: scale(1.0, 1.0);
-        transition: ease all 0.8s;
-        /* text-decoration: none; */
-    }
-
-    a:hover {
-        transform: scale(1.1, 1.1);
-        transition: ease all 0.8s;
     }
 
     p {
         color: #f99766;
+    }
+
+    .p-text:hover {
+        filter: brightness(100%); /* turn off brightness transition on hover for this text */
     }
 
     @media only screen and (max-width: 500px) {
@@ -145,10 +141,12 @@
 
     <div class="cover-grid">
         <div class="cover-entry">
-            <a href="./website/">website
+            <a href="./website/">
+                <p class="p-text">website</p>
             </a>
         </div>
     </div>
+
     <script>
         const canvas = document.getElementById("about-canvas");
         const ctx = canvas.getContext("2d");
