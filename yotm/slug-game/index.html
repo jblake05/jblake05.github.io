@@ -1,6 +1,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../../styles.css">
 </head>
 
 <style>
@@ -72,14 +72,19 @@
 
     a {
         color: #f99766;
+        transform: scale(1.0, 1.0);
+        transition: ease all 0.8s;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #f99766;
+        transform: scale(1.1, 1.1);
+        transition: ease all 0.8s;
     }
 
     p {
         color: #f99766;
-    }
-
-    .p-text:hover {
-        filter: brightness(100%); /* turn off brightness transition on hover for this text */
     }
 
     @media only screen and (max-width: 500px) {
@@ -91,17 +96,6 @@
         .yotm-grid {
             grid-template-rows: 1fr 1fr 1fr;
             grid-template-columns: 1fr;
-        }
-
-        #back-arrow {
-            padding-right: 2%;
-            width: 20%;
-            margin: auto 0;
-        }
-        
-        #label {
-            width: 100%;
-            font-size: 1.75em;
         }
     }
 
@@ -127,7 +121,7 @@
                 <svg class="back-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#f99766" d="M160 128C142.3 128 128 113.7 128 96C128 78.3 142.3 64 160 64L256 64C309 64 352 107 352 160L352 466.7L425.4 393.3C437.9 380.8 458.2 380.8 470.7 393.3C483.2 405.8 483.2 426.1 470.7 438.6L342.7 566.6C330.2 579.1 309.9 579.1 297.4 566.6L169.4 438.6C156.9 426.1 156.9 405.8 169.4 393.3C181.9 380.8 202.2 380.8 214.7 393.3L288 466.7L288 160C288 142.3 273.7 128 256 128L160 128z"/></svg>
             </a>
             
-            <h1 id="label">year of the month 2026</h1>
+            <h1 id="label">website</h1>
 
             <div class="canvas-container">
                 <canvas id="about-canvas">
@@ -137,19 +131,12 @@
         </div>
     <hr>
 
-    <p class="inner-text">Year of the Month is a project I'm doing in 2026 where I pick a different project to try (*and finish*) within the month. I have a bunch of things I want to do and have issues with finishing personal projects. I'm cataloging what I ended up doing for each month below.</p>
+    <p class="inner-text">I made a game for February! This is the first game that I've made in a while (and first one that I put more significant effort into), and I decided to scope
+        this project to be just a demo/alpha as a result. Because of this, there are definitely still some bugs, but I'm pretty happy with the result considering I did the art, music, and programming.
+    </p>
 
-    <div class="cover-grid">
-        <div class="cover-entry">
-            <a href="./website/">
-                <p class="p-text">website</p>
-            </a>
-        </div>
-        <div class="cover-entry">
-            <a href="./slug-game/">
-                <p class="p-text">slug game</p>
-            </a>
-        </div>
+    <div class="cover-entry">
+        <a href="https://thunkerslair.itch.io/slug-game-alpha">itch.io page</a>
     </div>
 
     <script>
@@ -186,44 +173,9 @@
 
             ctx.moveTo(WIDTH/2, HEIGHT/2);
             ctx.lineTo(WIDTH/2, HEIGHT/2 - (scale * HEIGHT/2));
-
-            //top right
+        
             ctx.moveTo(WIDTH/2, HEIGHT/2);
             ctx.lineTo(WIDTH/2 + (scale * 1*WIDTH/6), HEIGHT/2 - (scale * 2*HEIGHT/6));
-
-            ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2 + (scale * 2*WIDTH/6), HEIGHT/2 - (scale * 1*HEIGHT/6));
-
-            ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2 + (scale * WIDTH/2), HEIGHT/2);
-
-            // bottom right
-            ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2 + (scale * 2*WIDTH/6), HEIGHT/2 + (scale * HEIGHT/6));
-
-            ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2 + (scale * 1*WIDTH/6), HEIGHT/2 + (scale * 2*HEIGHT/6));
-
-            ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2, HEIGHT/2 + (scale * HEIGHT/2));
-
-
-            // bottom left
-            ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2 - (scale * WIDTH/6), HEIGHT/2 + (scale * 2*HEIGHT/6));
-
-            ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2 - (scale * 2*WIDTH/6), HEIGHT/2 + (scale * HEIGHT/6));
-
-            ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2 - (scale * WIDTH/2), HEIGHT/2);
-
-            // top left
-            ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2 - (scale * 2*WIDTH/6), HEIGHT/2 - (scale * HEIGHT/6));
-
-            ctx.moveTo(WIDTH/2, HEIGHT/2);
-            ctx.lineTo(WIDTH/2 - (scale * WIDTH/6), HEIGHT/2 - (scale * 2*HEIGHT/6));
             
             ctx.stroke();
 
